@@ -1,0 +1,415 @@
+{
+  "name": "vs2026-mode",
+  "displayName": "Visual Studio 2026 Mode",
+  "description": "Transforms VS Code & Antigravity IDE into full Visual Studio 2026 environment for C#, Python, Java, C++, and Web",
+  "version": "0.5.0",
+  "publisher": "antigravity",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Themes",
+    "Testing",
+    "Other"
+  ],
+  "keywords": [
+    "visual studio",
+    "vs2026",
+    "csharp",
+    "python",
+    "java",
+    "cpp",
+    "solution explorer",
+    "hot reload",
+    "nuget"
+  ],
+  "main": "./dist/extension.js",
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "Visual Studio 2026 Dark",
+        "uiTheme": "vs-dark",
+        "path": "./assets/styles/vs2026-theme.json"
+      }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "vs2026-solution-container",
+          "title": "Visual Studio 2026",
+          "icon": "$(project)"
+        }
+      ]
+    },
+    "views": {
+      "explorer": [
+        {
+          "id": "vs2026.quickSwitch",
+          "name": "Visual Studio 2026",
+          "visibility": "visible"
+        }
+      ],
+      "vs2026-solution-container": [
+        {
+          "id": "vs2026.solutionExplorer",
+          "name": "Solution Explorer",
+          "visibility": "visible"
+        },
+        {
+          "id": "vs2026.propertiesView",
+          "name": "Properties",
+          "visibility": "visible"
+        }
+      ],
+      "panel": [
+        {
+          "id": "vs2026.errorList",
+          "name": "Error List (VS 2026)"
+        },
+        {
+          "id": "vs2026.testExplorer",
+          "name": "Test Explorer (VS 2026)"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "vs2026.toggleMode",
+        "title": "Switch VS 2026 Mode",
+        "icon": "$(arrow-swap)",
+        "category": "Visual Studio 2026"
+      },
+      {
+        "command": "vs2026.enableMode",
+        "title": "VS 2026: Switch to Visual Studio 2026 Layout",
+        "category": "Visual Studio 2026"
+      },
+      {
+        "command": "vs2026.disableMode",
+        "title": "VS 2026: Restore Default VS Code Layout",
+        "category": "Visual Studio 2026"
+      },
+      {
+        "command": "vs2026.openStartWindow",
+        "title": "VS 2026: Open Start Window",
+        "icon": "$(home)",
+        "category": "Visual Studio 2026"
+      },
+      {
+        "command": "vs2026.toggleHotReload",
+        "title": "VS 2026: Toggle Hot Reload (🔥)",
+        "icon": "$(flame)",
+        "category": "Visual Studio 2026"
+      },
+      {
+        "command": "vs2026.publishProject",
+        "title": "VS 2026: Publish / Deploy Project...",
+        "icon": "$(cloud-upload)",
+        "category": "Visual Studio 2026"
+      },
+      {
+        "command": "vs2026.runAllTests",
+        "title": "Run All Tests",
+        "icon": "$(play-circle)",
+        "category": "Visual Studio 2026"
+      },
+      {
+        "command": "vs2026.refreshTests",
+        "title": "Refresh Tests",
+        "icon": "$(refresh)",
+        "category": "Visual Studio 2026"
+      },
+      {
+        "command": "vs2026.refreshSolution",
+        "title": "Refresh Solution Explorer",
+        "icon": "$(refresh)",
+        "category": "Visual Studio 2026"
+      },
+      {
+        "command": "vs2026.addNewItem",
+        "title": "Add New Item... (C#, Python, Java, C++, Web)",
+        "icon": "$(add)",
+        "category": "Visual Studio 2026"
+      },
+      {
+        "command": "vs2026.addClass",
+        "title": "Add Class...",
+        "category": "Visual Studio 2026"
+      },
+      {
+        "command": "vs2026.addInterface",
+        "title": "Add Interface...",
+        "category": "Visual Studio 2026"
+      },
+      {
+        "command": "vs2026.addEnum",
+        "title": "Add Enum...",
+        "category": "Visual Studio 2026"
+      },
+      {
+        "command": "vs2026.buildSolution",
+        "title": "Build Solution / Project",
+        "icon": "$(gear)",
+        "category": "Visual Studio 2026"
+      },
+      {
+        "command": "vs2026.rebuildSolution",
+        "title": "Rebuild Solution",
+        "category": "Visual Studio 2026"
+      },
+      {
+        "command": "vs2026.cleanSolution",
+        "title": "Clean Solution",
+        "category": "Visual Studio 2026"
+      },
+      {
+        "command": "vs2026.startDebugging",
+        "title": "Start (VS 2026)",
+        "icon": {
+          "dark": "./assets/icons/start-green.svg",
+          "light": "./assets/icons/start-green.svg"
+        },
+        "category": "Visual Studio 2026"
+      },
+      {
+        "command": "vs2026.startWithoutDebugging",
+        "title": "Start Without Debugging (VS 2026)",
+        "icon": {
+          "dark": "./assets/icons/start-without-debugging-green.svg",
+          "light": "./assets/icons/start-without-debugging-green.svg"
+        },
+        "category": "Visual Studio 2026"
+      },
+      {
+        "command": "vs2026.manageNuGet",
+        "title": "Manage NuGet Packages...",
+        "icon": "$(package)",
+        "category": "Visual Studio 2026"
+      },
+      {
+        "command": "vs2026.openDevTerminal",
+        "title": "Open Developer Command Prompt / Terminal",
+        "icon": "$(terminal)",
+        "category": "Visual Studio 2026"
+      },
+      {
+        "command": "vs2026.setStartupProject",
+        "title": "Set as Startup Project",
+        "category": "Visual Studio 2026"
+      }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "command": "vs2026.startDebugging",
+          "group": "navigation@0"
+        },
+        {
+          "command": "vs2026.startWithoutDebugging",
+          "group": "navigation@1"
+        },
+        {
+          "command": "vs2026.toggleHotReload",
+          "group": "navigation@2"
+        },
+        {
+          "command": "vs2026.toggleMode",
+          "group": "navigation@3"
+        },
+        {
+          "command": "vs2026.openStartWindow",
+          "group": "navigation@4"
+        }
+      ],
+      "editor/title/run": [
+        {
+          "command": "vs2026.startDebugging",
+          "group": "navigation@0"
+        },
+        {
+          "command": "vs2026.startWithoutDebugging",
+          "group": "navigation@1"
+        }
+      ],
+      "view/title": [
+        {
+          "command": "vs2026.startDebugging",
+          "when": "view == vs2026.quickSwitch",
+          "group": "navigation@0"
+        },
+        {
+          "command": "vs2026.toggleMode",
+          "when": "view == vs2026.quickSwitch",
+          "group": "navigation@1"
+        },
+        {
+          "command": "vs2026.openStartWindow",
+          "when": "view == vs2026.quickSwitch",
+          "group": "navigation@2"
+        },
+        {
+          "command": "vs2026.startDebugging",
+          "when": "view == vs2026.solutionExplorer",
+          "group": "navigation@0"
+        },
+        {
+          "command": "vs2026.toggleMode",
+          "when": "view == vs2026.solutionExplorer",
+          "group": "navigation@1"
+        },
+        {
+          "command": "vs2026.openStartWindow",
+          "when": "view == vs2026.solutionExplorer",
+          "group": "navigation@1"
+        },
+        {
+          "command": "vs2026.refreshSolution",
+          "when": "view == vs2026.solutionExplorer",
+          "group": "navigation@2"
+        },
+        {
+          "command": "vs2026.addNewItem",
+          "when": "view == vs2026.solutionExplorer",
+          "group": "navigation@2"
+        },
+        {
+          "command": "vs2026.buildSolution",
+          "when": "view == vs2026.solutionExplorer",
+          "group": "navigation@3"
+        },
+        {
+          "command": "vs2026.publishProject",
+          "when": "view == vs2026.solutionExplorer",
+          "group": "navigation@4"
+        },
+        {
+          "command": "vs2026.runAllTests",
+          "when": "view == vs2026.testExplorer",
+          "group": "navigation@1"
+        },
+        {
+          "command": "vs2026.refreshTests",
+          "when": "view == vs2026.testExplorer",
+          "group": "navigation@2"
+        }
+      ],
+      "view/item/context": [
+        {
+          "command": "vs2026.addNewItem",
+          "when": "view == vs2026.solutionExplorer && (viewItem == 'project' || viewItem == 'folder')",
+          "group": "1_add@1"
+        },
+        {
+          "command": "vs2026.addClass",
+          "when": "view == vs2026.solutionExplorer && (viewItem == 'project' || viewItem == 'folder')",
+          "group": "1_add@2"
+        },
+        {
+          "command": "vs2026.addInterface",
+          "when": "view == vs2026.solutionExplorer && (viewItem == 'project' || viewItem == 'folder')",
+          "group": "1_add@3"
+        },
+        {
+          "command": "vs2026.addEnum",
+          "when": "view == vs2026.solutionExplorer && (viewItem == 'project' || viewItem == 'folder')",
+          "group": "1_add@4"
+        },
+        {
+          "command": "vs2026.manageNuGet",
+          "when": "view == vs2026.solutionExplorer && (viewItem == 'project' || viewItem == 'dependencies')",
+          "group": "2_nuget@1"
+        },
+        {
+          "command": "vs2026.publishProject",
+          "when": "view == vs2026.solutionExplorer && viewItem == 'project'",
+          "group": "3_build@0"
+        },
+        {
+          "command": "vs2026.setStartupProject",
+          "when": "view == vs2026.solutionExplorer && viewItem == 'project'",
+          "group": "3_build@1"
+        },
+        {
+          "command": "vs2026.buildSolution",
+          "when": "view == vs2026.solutionExplorer && (viewItem == 'solution' || viewItem == 'project')",
+          "group": "3_build@2"
+        },
+        {
+          "command": "vs2026.rebuildSolution",
+          "when": "view == vs2026.solutionExplorer && (viewItem == 'solution' || viewItem == 'project')",
+          "group": "3_build@3"
+        },
+        {
+          "command": "vs2026.cleanSolution",
+          "when": "view == vs2026.solutionExplorer && (viewItem == 'solution' || viewItem == 'project')",
+          "group": "3_build@4"
+        }
+      ]
+    },
+    "keybindings": [
+      {
+        "command": "vs2026.buildSolution",
+        "key": "ctrl+shift+b",
+        "mac": "cmd+shift+b"
+      },
+      {
+        "command": "vs2026.startDebugging",
+        "key": "f5"
+      },
+      {
+        "command": "vs2026.startWithoutDebugging",
+        "key": "ctrl+f5",
+        "mac": "cmd+f5"
+      },
+      {
+        "command": "vs2026.addNewItem",
+        "key": "shift+alt+a"
+      },
+      {
+        "command": "vs2026.addClass",
+        "key": "shift+alt+c"
+      },
+      {
+        "command": "vs2026.toggleMode",
+        "key": "ctrl+alt+m",
+        "mac": "ctrl+cmd+v"
+      }
+    ],
+    "configuration": {
+      "title": "Visual Studio 2026 Mode",
+      "properties": {
+        "vs2026.autoSwitchOnCSharp": {
+          "type": "boolean",
+          "default": true,
+          "description": "Automatically activate Visual Studio 2026 mode when opening a C#, Python, or Java project."
+        },
+        "vs2026.fileScopedNamespaces": {
+          "type": "boolean",
+          "default": true,
+          "description": "Use C# 10+ file-scoped namespaces (namespace Foo.Bar;) for newly created items."
+        },
+        "vs2026.preferredConfiguration": {
+          "type": "string",
+          "enum": ["Debug", "Release"],
+          "default": "Debug",
+          "description": "Default build configuration."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "@types/vscode": "^1.90.0",
+    "typescript": "^5.4.5"
+  }
+}

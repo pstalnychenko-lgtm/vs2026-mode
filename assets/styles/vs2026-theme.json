@@ -1,0 +1,138 @@
+{
+  "$schema": "vscode://schemas/color-theme",
+  "name": "Visual Studio 2026 Dark",
+  "type": "dark",
+  "colors": {
+    "activityBar.background": "#2D2D30",
+    "activityBar.foreground": "#FFFFFF",
+    "activityBar.inactiveForeground": "#858585",
+    "activityBarBadge.background": "#68217A",
+    "activityBarBadge.foreground": "#FFFFFF",
+    "sideBar.background": "#252526",
+    "sideBar.foreground": "#CCCCCC",
+    "sideBar.border": "#3E3E42",
+    "sideBarTitle.foreground": "#BBBBBB",
+    "sideBarSectionHeader.background": "#2D2D30",
+    "sideBarSectionHeader.foreground": "#CCCCCC",
+    "sideBarSectionHeader.border": "#3E3E42",
+    "editor.background": "#1E1E1E",
+    "editor.foreground": "#DCDCDC",
+    "editorLineNumber.foreground": "#2B91AF",
+    "editorLineNumber.activeForeground": "#FFFFFF",
+    "editorCursor.foreground": "#AEAFAD",
+    "editor.selectionBackground": "#264F78",
+    "editor.inactiveSelectionBackground": "#3A3D41",
+    "editorGroupHeader.tabsBackground": "#2D2D30",
+    "editorGroupHeader.tabsBorder": "#3E3E42",
+    "tab.activeBackground": "#1E1E1E",
+    "tab.activeForeground": "#FFFFFF",
+    "tab.activeBorderTop": "#68217A",
+    "tab.inactiveBackground": "#2D2D30",
+    "tab.inactiveForeground": "#969696",
+    "tab.border": "#3E3E42",
+    "statusBar.background": "#68217A",
+    "statusBar.foreground": "#FFFFFF",
+    "statusBar.noFolderBackground": "#68217A",
+    "statusBar.debuggingBackground": "#CA5100",
+    "statusBar.debuggingForeground": "#FFFFFF",
+    "statusBarItem.hoverBackground": "#8540A6",
+    "statusBarItem.remoteBackground": "#68217A",
+    "titleBar.activeBackground": "#2D2D30",
+    "titleBar.activeForeground": "#CCCCCC",
+    "titleBar.inactiveBackground": "#2D2D30",
+    "titleBar.inactiveForeground": "#777777",
+    "titleBar.border": "#3E3E42",
+    "panel.background": "#252526",
+    "panel.border": "#3E3E42",
+    "panelTitle.activeForeground": "#FFFFFF",
+    "panelTitle.activeBorder": "#68217A",
+    "panelTitle.inactiveForeground": "#858585",
+    "list.activeSelectionBackground": "#094771",
+    "list.activeSelectionForeground": "#FFFFFF",
+    "list.inactiveSelectionBackground": "#37373D",
+    "list.hoverBackground": "#2A2D2E",
+    "list.focusBackground": "#094771",
+    "input.background": "#333337",
+    "input.foreground": "#CCCCCC",
+    "input.border": "#3E3E42",
+    "button.background": "#68217A",
+    "button.foreground": "#FFFFFF",
+    "button.hoverBackground": "#8540A6",
+    "badge.background": "#68217A",
+    "badge.foreground": "#FFFFFF",
+    "tree.indentGuidesStroke": "#4E4E52"
+  },
+  "tokenColors": [
+    {
+      "name": "Keywords",
+      "scope": ["keyword", "keyword.control", "storage.type", "storage.modifier"],
+      "settings": {
+        "foreground": "#569CD6"
+      }
+    },
+    {
+      "name": "Types & Classes",
+      "scope": ["entity.name.type", "entity.name.class", "support.type", "support.class"],
+      "settings": {
+        "foreground": "#4EC9B0"
+      }
+    },
+    {
+      "name": "Interfaces",
+      "scope": ["entity.name.type.interface"],
+      "settings": {
+        "foreground": "#B8D7A3"
+      }
+    },
+    {
+      "name": "Enums",
+      "scope": ["entity.name.type.enum"],
+      "settings": {
+        "foreground": "#B8D7A3"
+      }
+    },
+    {
+      "name": "Strings",
+      "scope": ["string", "string.quoted"],
+      "settings": {
+        "foreground": "#D69D85"
+      }
+    },
+    {
+      "name": "Numbers",
+      "scope": ["constant.numeric"],
+      "settings": {
+        "foreground": "#B5CEA8"
+      }
+    },
+    {
+      "name": "Comments",
+      "scope": ["comment", "punctuation.definition.comment"],
+      "settings": {
+        "foreground": "#57A64A",
+        "fontStyle": "italic"
+      }
+    },
+    {
+      "name": "Methods and Functions",
+      "scope": ["entity.name.function", "support.function"],
+      "settings": {
+        "foreground": "#DCDCAA"
+      }
+    },
+    {
+      "name": "Variables and Parameters",
+      "scope": ["variable", "variable.parameter"],
+      "settings": {
+        "foreground": "#9CDCFE"
+      }
+    },
+    {
+      "name": "Preprocessor and Directives",
+      "scope": ["meta.preprocessor", "keyword.control.directive"],
+      "settings": {
+        "foreground": "#9B9B9B"
+      }
+    }
+  ]
+}
